@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <title>
+            cq 2nd web team task
+        </title>
+
+        <style>
+          * {
+            box-sizing: border-box;
+          }
+          
+          body {
+            font-family: Arial, Helvetica, sans-serif;
+          }
+          
+          /* Float four columns side by side */
+          .column {
+            float: left;
+            width: 25%;
+            padding: 0 10px;
+          }
+          
+          /* Remove extra left and right margins, due to padding */
+          .row {margin: 0 -5px;}
+          
+          /* Clear floats after the columns */
+          .row:after {
+            content: "";
+            display: table;
+            clear: both;
+          }
+          
+          /* Responsive columns */
+          @media screen and (max-width: 600px) {
+            .column {
+              width: 100%;
+              display: block;
+              margin-bottom: 20px;
+            }
+          }
+          
+          /* Style the counter cards */
+          .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            padding: 16px;
+            text-align: center;
+            background-color: #f1f1f1;
+          }
+          </style>
+
+          <style>
+            .fa {
+              padding: 20px;
+              font-size: 30px;
+              width: 50px;
+              text-align: center;
+              text-decoration: none;
+              margin: 5px 2px;
+            }
+            
+            .fa:hover {
+                opacity: 0.7;
+            }
+            
+            .fa-facebook {
+              background: #3B5998;
+              color: white;
+            }
+            
+            .fa-twitter {
+              background: #55ACEE;
+              color: white;
+            }
+
+            .fa-linkedin {
+              background: #007bb5;
+              color: white;
+            }
+
+            .fa-youtube {
+              background: #bb0000;
+              color: white;
+            }
+
+            .fa-instagram {
+              background: #125688;
+              color: white;
+            }
+            </style>
+
+        <style>
+            .navbar {
+                width: 100%;
+                background-color: #555;
+                overflow: auto;
+            }
+            
+            body {
+            background-image: url('restaurant.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+            }
+
+
+            /* Navbar links */
+            .navbar a {
+            float: left;
+            text-align: center;
+            padding: 12px;
+            color: white;
+            text-decoration: none;
+            font-size: 17px;
+            }
+
+            /* Navbar links on mouse-over */
+            .navbar a:hover {
+            background-color: #000;
+            }
+
+            /* Current/active navbar link */
+            .active {
+            background-color: #04AA6D;
+            }
+
+            /* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
+            @media screen and (max-width: 500px) {
+            .navbar a {
+                float: none;
+                display: block;
+                }   
+            }
+        </style>
+    </head>
+    <>
+        <div class="navbar">
+            <a class="active" href="#"><i class="fa fa-fw fa-home">Home</i></a> 
+            <a href="#"><i class="fa fa-fw fa-search">Search</i></a> 
+            <a href="#"><i class="fa fa-fw fa-envelope"> Contact</i></a> 
+            <a href="#"><i class="fa fa-fw fa-user"> Login</i></a>
+          </div>
+
+          <h1  style="color:white; text-align:center;">Limelight</h1>
+          <p style="background-color:rgb(235, 233, 132);" style="font-family:courier;" style="font-size:300%;">
+            A restaurant (sometimes known as a diner) is a place where cooked food is sold to the public,
+            and where people sit down to eat it. It is also a place where people go to enjoy the time and
+            to eat a meal. Some restaurants are a chain, meaning that there are restaurants which have the
+            same name and serve the same food.
+          </p>
+
+          <h2 style="color:white;">Specialss</h2>
+          <div class="row">
+          <div class="column" style="background-color:rgb(235, 233, 132);">
+            <img src="pizza.jpg" alt="Avatar" style="width:100% background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;">
+            <div class="card">
+              <h4><b>Main dish</b></h4>
+              <p>Pizza</p>
+            </div>
+          </div>
+
+          
+
+          <div class="column" style="background-color:rgb(235, 233, 132);">
+            <img src="mocha.jpg" alt="Avatar" style="width:100% background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;">
+            <div class="card">
+              <h4><b>Beverages</b></h4>
+              <p>Mocha</p>
+            </div>
+          </div>
+
+          <div class="column" style="background-color:rgb(235, 233, 132);">
+            <img src="chicken.jpg" alt="Avatar" style="width:100% background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;">
+            <div class="card">
+              <h4><b>Side dish</b></h4>
+              <p>Chicken nuggets</p>
+            </div>
+          </div>
+        </div>
+          <h2 style="color:white;">Menu</h2>
+          <div class="col-4 divBorder menu" style="background-color:rgb(235, 233, 132);">  
+            	
+            
+            <h3>Beverages</h3>
+            <ul >
+                <li>Mocha</li>
+                <li>Cappucino</li>
+                <li>Beach summer</li>
+            </ul>
+            
+          </div>
+
+          <div class="col-4 divBorder menu" style="background-color:rgb(235, 233, 132);">  
+            	
+            
+            <h3>Main dish</h3>
+            <ul >
+                <li>Lasagna</li>
+                <li>Pizza</li>
+                <li>Thai fusion</li>
+            </ul>
+            
+          </div>
+
+          <div class="col-4 divBorder menu" style="background-color:rgb(235, 233, 132);">  
+            	
+            
+            <h3>Side dish</h3>
+            <ul >
+                <li>Fries</li>
+                <li>Chicken nuggets</li>
+                <li>foundue</li>
+            </ul>
+            
+          </div>
+
+          <a href="#" class="fa fa-facebook"></a>
+          <a href="#" class="fa fa-twitter"></a>
+          <a href="#" class="fa fa-linkedin"></a>
+          <a href="#" class="fa fa-youtube"></a>
+          <a href="#" class="fa fa-instagram"></a>
+    </body>
+</html>
