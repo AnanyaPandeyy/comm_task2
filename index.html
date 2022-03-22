@@ -1,233 +1,482 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-        <title>
-            cq 2nd web team task
-        </title>
-
         <style>
-          * {
-            box-sizing: border-box;
-          }
-          
-          body {
-            font-family: Arial, Helvetica, sans-serif;
-          }
-          
-          /* Float four columns side by side */
-          .column {
-            float: left;
-            width: 25%;
-            padding: 0 10px;
-          }
-          
-          /* Remove extra left and right margins, due to padding */
-          .row {margin: 0 -5px;}
-          
-          /* Clear floats after the columns */
-          .row:after {
-            content: "";
-            display: table;
-            clear: both;
-          }
-          
-          /* Responsive columns */
-          @media screen and (max-width: 600px) {
-            .column {
-              width: 100%;
-              display: block;
-              margin-bottom: 20px;
-            }
-          }
-          
-          /* Style the counter cards */
-          .card {
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-            padding: 16px;
-            text-align: center;
-            background-color: #f1f1f1;
-          }
-          </style>
-
-          <style>
-            .fa {
-              padding: 20px;
-              font-size: 30px;
-              width: 50px;
-              text-align: center;
-              text-decoration: none;
-              margin: 5px 2px;
-            }
-            
-            .fa:hover {
-                opacity: 0.7;
-            }
-            
-            .fa-facebook {
-              background: #3B5998;
-              color: white;
-            }
-            
-            .fa-twitter {
-              background: #55ACEE;
-              color: white;
-            }
-
-            .fa-linkedin {
-              background: #007bb5;
-              color: white;
-            }
-
-            .fa-youtube {
-              background: #bb0000;
-              color: white;
-            }
-
-            .fa-instagram {
-              background: #125688;
-              color: white;
-            }
-            </style>
-
-        <style>
-            .navbar {
-                width: 100%;
-                background-color: #555;
-                overflow: auto;
-            }
-            
             body {
-            background-image: url('restaurant.jpg');
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-size: 100% 100%;
+                margin: 0;
+                font-family: Arial, Helvetica, sans-serif;
+                
             }
 
-
-            /* Navbar links */
-            .navbar a {
-            float: left;
-            text-align: center;
-            padding: 12px;
-            color: white;
-            text-decoration: none;
-            font-size: 17px;
+            .topnav {
+                overflow: hidden;
+                background-color: #bd6b2a;
             }
 
-            /* Navbar links on mouse-over */
-            .navbar a:hover {
-            background-color: #000;
-            }
-
-            /* Current/active navbar link */
-            .active {
-            background-color: #04AA6D;
-            }
-
-            /* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
-            @media screen and (max-width: 500px) {
-            .navbar a {
-                float: none;
+            .topnav a {
+                float: left;
                 display: block;
-                }   
+                color: #f2f2f2;
+                text-align: center;
+                padding: 20px 50px;
+                text-decoration: none;
+                font-size: 30px;
+            }
+
+            .topnav a:hover {
+                background-color: #ddd;
+                color: black;
+            }
+
+            .topnav a.active {
+                background-color: #04AA6D;
+                color: white;
+            }
+
+            .topnav .icon {
+                display: none;
+            }
+
+            @media screen and (max-width: 600px) {
+                .topnav a:not(:first-child) {
+                    display: none;
+                }
+                .topnav a.icon {
+                    float: right;
+                    display: block;
+                }
+            }
+
+            @media screen and (max-width: 600px) {
+                .topnav.responsive {
+                    position: relative;
+                }
+                .topnav.responsive .icon {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                }
+                .topnav.responsive a {
+                    float: none;
+                    display: block;
+                    text-align: left;
+                }
             }
         </style>
+
+
+
+
+
+
+
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+
+            .row::after {
+                content: "";
+                clear: both;
+                display: table;
+            }
+
+            [class*="col-"] {
+                float: left;
+                padding: 15px;
+            }
+
+            html {
+                font-family: "Lucida Sans", sans-serif;
+            }
+            .header {
+                background-color: #e5e5e5;
+                text-align:center;
+                padding: 15px;                
+            }
+            .headermenu{
+                background-color: #9857cd7a;
+                text-align:center;
+                padding: 15px;                
+            }
+            .menu ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            .menu li {
+                padding: 8px;
+                margin-bottom: 7px;
+                background-color: #33b5e5;
+                color: #ffffff;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            }
+
+            .menu li:hover {
+                background-color: #0099cc;
+            }
+
+            .aside {
+                background-color: #33b5e5;
+                padding: 15px;
+                color: #ffffff;
+                text-align: center;
+                font-size: 14px;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            }
+
+            .footer {
+                background-color: #0099cc;
+                color: #ffffff;
+                text-align: center;
+                font-size: 12px;
+                padding: 15px;
+            }
+            .contain{
+                border: 2px #28c0d7e6;
+                padding: 24px;
+                background-color: #8d97921c;
+                margin: 3px 6px;
+                //height: 340px;
+                //width: 24em;
+                border-radius: 23px;
+            }
+            .imgresponsive {
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+                border-radius: 19px;
+            }
+            .padding{
+                padding: 30px;
+                margin: 30px auto;
+            }
+            .img-container{
+                margin: auto;
+                width: 228px;
+                height: 148px;
+            }
+            .img-container img{
+                width: 100%;
+                height: 100%;
+            }
+            .container-1{
+                display:flex;
+            }
+            .container-1 div{
+                border:1px #ccc solid;
+                padding:10px;
+            }
+            .box-1{
+                flex: 1;
+            }
+            .box-2{
+                flex: 1;
+            }
+            .box-3{
+                flex: 1;
+            }
+            
+
+            /* For mobile phones: */
+            [class*="col-"] {
+                width: 100%;
+            }
+
+            @media only screen and (min-width: 600px) {
+                /* For tablets: */
+                .col-s-1 {
+                    width: 8.33%;
+                }
+                .col-s-2 {
+                    width: 16.66%;
+                }
+                .col-s-3 {
+                    width: 25%;
+                }
+                .col-s-4 {
+                    width: 33.33%;
+                }
+                .col-s-5 {
+                    width: 41.66%;
+                }
+                .col-s-6 {
+                    width: 50%;
+                }
+                .col-s-7 {
+                    width: 58.33%;
+                }
+                .col-s-8 {
+                    width: 66.66%;
+                }
+                .col-s-9 {
+                    width: 75%;
+                }
+                .col-s-10 {
+                    width: 83.33%;
+                }
+                .col-s-11 {
+                    width: 91.66%;
+                }
+                .col-s-12 {
+                    width: 100%;
+                }
+            }
+            @media only screen and (min-width: 768px) {
+                /* For desktop: */
+                .col-1 {
+                    width: 8.33%;
+                }
+                .col-2 {
+                    width: 16.66%;
+                }
+                .col-3 {
+                    width: 25%;
+                }
+                .col-4 {
+                    width: 33.33%;
+                }
+                .col-5 {
+                    width: 41.66%;
+                }
+                .col-6 {
+                    width: 50%;
+                }
+                .col-7 {
+                    width: 58.33%;
+                }
+                .col-8 {
+                    width: 66.66%;
+                }
+                .col-9 {
+                    width: 75%;
+                }
+                .col-10 {
+                    width: 83.33%;
+                }
+                .col-11 {
+                    width: 91.66%;
+                }
+                .col-12 {
+                    width: 100%;
+                }
+            }
+
+        </style>       
+
+
     </head>
-    <>
-        <div class="navbar">
-            <a class="active" href="#"><i class="fa fa-fw fa-home">Home</i></a> 
-            <a href="#"><i class="fa fa-fw fa-search">Search</i></a> 
-            <a href="#"><i class="fa fa-fw fa-envelope"> Contact</i></a> 
-            <a href="#"><i class="fa fa-fw fa-user"> Login</i></a>
-          </div>
-
-          <h1  style="color:white; text-align:center;">Limelight</h1>
-          <p style="background-color:rgb(235, 233, 132);" style="font-family:courier;" style="font-size:300%;">
-            A restaurant (sometimes known as a diner) is a place where cooked food is sold to the public,
-            and where people sit down to eat it. It is also a place where people go to enjoy the time and
-            to eat a meal. Some restaurants are a chain, meaning that there are restaurants which have the
-            same name and serve the same food.
-          </p>
-
-          <h2 style="color:white;">Specialss</h2>
-          <div class="row">
-          <div class="column" style="background-color:rgb(235, 233, 132);">
-            <img src="pizza.jpg" alt="Avatar" style="width:100% background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-size: 100% 100%;">
-            <div class="card">
-              <h4><b>Main dish</b></h4>
-              <p>Pizza</p>
-            </div>
-          </div>
-
-          
-
-          <div class="column" style="background-color:rgb(235, 233, 132);">
-            <img src="mocha.jpg" alt="Avatar" style="width:100% background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-size: 100% 100%;">
-            <div class="card">
-              <h4><b>Beverages</b></h4>
-              <p>Mocha</p>
-            </div>
-          </div>
-
-          <div class="column" style="background-color:rgb(235, 233, 132);">
-            <img src="chicken.jpg" alt="Avatar" style="width:100% background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-size: 100% 100%;">
-            <div class="card">
-              <h4><b>Side dish</b></h4>
-              <p>Chicken nuggets</p>
-            </div>
-          </div>
+    <body>
+        <div class="topnav" id="myTopnav">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#news">Search</a>
+            <a href="#contact">Contact</a>
+            <a href="#about">Login</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
         </div>
-          <h2 style="color:white;">Menu</h2>
-          <div class="col-4 divBorder menu" style="background-color:rgb(235, 233, 132);">  
-            	
-            
-            <h3>Beverages</h3>
-            <ul >
-                <li>Mocha</li>
-                <li>Cappucino</li>
-                <li>Beach summer</li>
-            </ul>
-            
-          </div>
 
-          <div class="col-4 divBorder menu" style="background-color:rgb(235, 233, 132);">  
-            	
-            
-            <h3>Main dish</h3>
-            <ul >
-                <li>Lasagna</li>
-                <li>Pizza</li>
-                <li>Thai fusion</li>
-            </ul>
-            
-          </div>
+        <br>
 
-          <div class="col-4 divBorder menu" style="background-color:rgb(235, 233, 132);">  
-            	
-            
-            <h3>Side dish</h3>
-            <ul >
-                <li>Fries</li>
-                <li>Chicken nuggets</li>
-                <li>foundue</li>
-            </ul>
-            
-          </div>
+        <div class="header">
 
-          <a href="#" class="fa fa-facebook"></a>
-          <a href="#" class="fa fa-twitter"></a>
-          <a href="#" class="fa fa-linkedin"></a>
-          <a href="#" class="fa fa-youtube"></a>
-          <a href="#" class="fa fa-instagram"></a>
+            <img class="imgresponsive" src="restaurant1.jpg" alt="alt"/>
+            <h1>About our Restaurant</h1>
+            <p>
+                A restaurant (sometimes known as a diner) is a place where cooked food is sold to the public,
+                and where people sit down to eat it. It is also a place where people go to enjoy the time and
+                to eat a meal. Some restaurants are a chain, meaning that there are restaurants which have the
+                same name and serve the same food.
+            </p>
+        </div>
+        <br>
+
+
+        <div class="headermenu">
+            <h1>Our Menu</h1>            
+        </div>
+
+
+        <div class="padding">
+            <div class="container-1">
+                <div class="box-1">
+
+
+                    <div class="contain">
+                        <h1>
+                            Pizza
+                        </h1>
+                        <div class="img-container">
+                            <img class="imgresponsive" src="pizza.jpg" alt="alt"/>
+                        </div>
+                        <p>
+                            A restaurant (sometimes known as a diner) is a place where cooked food is sold to the public,
+                            and where people sit down to eat it. It is also a place where people go to enjoy the time and
+                            to eat a meal. Some restaurants are a chain, meaning that there are restaurants which have the
+                            same name and serve the same food.
+                        </p>
+                    </div>
+
+
+                </div>
+
+                <div class="box-2">
+                    <div class="contain">
+                        <h1>
+                            Chicken Nuggets
+                        </h1>
+                        <div class="img-container">
+                            <img class="imgresponsive" src="chicken.jpg" alt="alt"/>
+                        </div>
+                  
+                        <p>
+                            A restaurant (sometimes known as a diner) is a place where cooked food is sold to the public,
+                            and where people sit down to eat it. It is also a place where people go to enjoy the time and
+                            to eat a meal. Some restaurants are a chain, meaning that there are restaurants which have the
+                            same name and serve the same food.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="box-3">
+
+                    <div class="contain">
+                        <h1>
+                            Coffee
+                        </h1>         
+                        <div class="img-container">
+                            <img class="imgresponsive" src="mocha.jpg" alt="alt"/>
+                        </div>
+                        <p>
+                            A restaurant (sometimes known as a diner) is a place where cooked food is sold to the public,
+                            and where people sit down to eat it. It is also a place where people go to enjoy the time and
+                            to eat a meal. Some restaurants are a chain, meaning that there are restaurants which have the
+                            same name and serve the same food.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+            
+            
+            
+            
+            <div class="row">
+                <div class="col-4 col-s-12 menu">
+
+
+                    <div class="contain">
+                        <h1>
+                            Pizza
+                        </h1>
+                        <div class="img-container">
+                            <img class="imgresponsive" src="pizza.jpg" alt="alt"/>
+                        </div>
+                        <p>
+                            A restaurant (sometimes known as a diner) is a place where cooked food is sold to the public,
+                            and where people sit down to eat it. It is also a place where people go to enjoy the time and
+                            to eat a meal. Some restaurants are a chain, meaning that there are restaurants which have the
+                            same name and serve the same food.
+                        </p>
+                    </div>
+
+
+                </div>
+
+                <div class="col-4 col-s-12">
+                    <div class="contain">
+                        <h1>
+                            Chicken Nuggets
+                        </h1>
+                        <div class="img-container">
+                            <img class="imgresponsive" src="chicken.jpg" alt="alt"/>
+                        </div>
+                  
+                        <p>
+                            A restaurant (sometimes known as a diner) is a place where cooked food is sold to the public,
+                            and where people sit down to eat it. It is also a place where people go to enjoy the time and
+                            to eat a meal. Some restaurants are a chain, meaning that there are restaurants which have the
+                            same name and serve the same food.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="col-4 col-s-12">
+
+                    <div class="contain">
+                        <h1>
+                            Coffee
+                        </h1>         
+                        <div class="img-container">
+                            <img class="imgresponsive" src="mocha.jpg" alt="alt"/>
+                        </div>
+                        <p>
+                            A restaurant (sometimes known as a diner) is a place where cooked food is sold to the public,
+                            and where people sit down to eat it. It is also a place where people go to enjoy the time and
+                            to eat a meal. Some restaurants are a chain, meaning that there are restaurants which have the
+                            same name and serve the same food.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+            
+        </div>
+        <div class="headermenu">
+            <h1>Customer Review</h1>            
+        </div>
+
+        <div class="row">
+            <div class="col-3 col-s-3 menu"></div>
+            <div class="col-6 col-s-6 menu">
+                <div class="contain">
+                    <h1>
+                        Customer 1
+                    </h1>                        
+                    <p>
+                        Feedback 1
+                    </p>
+                </div>
+            </div>
+            <div class="col-3 col-s-3 menu"></div>
+        </div>
+        <div class="row">
+            <div class="col-3 col-s-3 menu"></div>
+            <div class="col-6 col-s-6 menu">
+                <div class="contain">
+                    <h1>
+                        Customer 2
+                    </h1>                        
+                    <p>
+                        Feedback 2
+                    </p>
+                </div>
+            </div>
+            <div class="col-3 col-s-3 menu"></div>
+        </div>
+
+
+
+        <div class="footer">
+            <p>@copyright</p>
+        </div>
+        <script>
+            function myFunction() {
+                var x = document.getElementById("myTopnav");
+                if (x.className === "topnav") {
+                    x.className += " responsive";
+                } else {
+                    x.className = "topnav";
+                }
+            }
+        </script>
+
     </body>
 </html>
